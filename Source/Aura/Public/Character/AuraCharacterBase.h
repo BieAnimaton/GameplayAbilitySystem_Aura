@@ -17,5 +17,6 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-
+	UPROPERTY(EditAnywhere, Category = "Combat"); // diz como o ponteiro deve ser
+	TObjectPtr<USkeletalMeshComponent> Weapon; // pointer, representa a arma de cada skeletal mesh
 };
