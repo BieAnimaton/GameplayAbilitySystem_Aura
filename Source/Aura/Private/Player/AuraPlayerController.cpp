@@ -4,6 +4,7 @@
 #include "Player/AuraPlayerController.h"
 
 #include "EnhancedInputSubsystems.h"
+#include "EnhancedInputComponent.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -30,4 +31,32 @@ void AAuraPlayerController::BeginPlay()
 	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock); // não travar o mouse na viewport
 	InputModeData.SetHideCursorDuringCapture(false); // enquanto cursor é caputrado, ele não desaparece
 	SetInputMode(InputModeData); // para usar os inputmodes definidos acima
+}
+
+void AAuraPlayerController::SetupInputComponent()
+{
+	Super::SetupInputComponent();
+
+	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	                                      // jogo crasha se o cast falhar
+
+	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
+	                         // vai juntar tudo e fazer o movimento ser reconhecido
+}
+
+void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
+{
+	const FVector2D InputAxisVector = InputActionValue.Get<FVector2D>(); // cria um input action na forma de vector2d -
+	                                                                   // pode acessar x e y
+	const FRotator Rotation = GetControlRotation(); // inicia com a rotação atual
+	const FRotator YawRotation(0.f, Rotation.Yaw, 0.f); // iniciar com 0 de pitch, yaw e 0 para roll
+
+	const FVector FowardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X); // devolve o vetor andar p frente com rotação
+	const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y); // o mesmo q o de cima, para o eixo y
+
+	if (APawn* ControlledPawn = GetPawn<APawn>()) // se controller pawn (obter pawn) for null, n faz nada
+	{
+		ControlledPawn->AddMovementInput(FowardDirection, InputAxisVector.Y); // move para frente ou trás
+		ControlledPawn->AddMovementInput(RightDirection, InputAxisVector.X); // move para direita ou esquerda
+	}
 }
