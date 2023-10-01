@@ -1,0 +1,53 @@
+[33mcommit ed6d3e24478220fe75137c2861b9f0309269e282[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sun Oct 1 16:29:04 2023 -0300
+
+    Game Mode
+
+[33mcommit 1d9a647dea8aa7e39f7f578740a1efb6ecd6938a[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sun Oct 1 10:12:47 2023 -0300
+
+    Movement Input
+
+[33mcommit 4688ed7a7ba240fd53719af9b0fac4f10adeefde[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sun Oct 1 08:07:37 2023 -0300
+
+    Aura Player Controller
+
+[33mcommit 1c4cf9e730b4f5a84a89dd4707fa0db645713323[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sat Sep 30 21:51:04 2023 -0300
+
+    Enhanced Input
+
+[33mcommit 6e1aede2d49f54e8ce10c8611949390e06038abf[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sat Sep 30 18:07:20 2023 -0300
+
+    Animation Blueprints
+
+[33mcommit c05ca0956b6bf4de30f36f064cecdce8cee5224e[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sat Sep 30 15:20:48 2023 -0300
+
+    Character Blueprint Setup
+
+[33mcommit fe4f676e2f1b762cd0770bb5adaf72e4801f3ae7[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Sat Sep 30 08:14:41 2023 -0300
+
+    Player and Enemy Characters
+
+[33mcommit c9a4703172e45a4690517c37022859a30f19be3e[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Fri Sep 29 22:49:49 2023 -0300
+
+    The Base Character Class
+
+[33mcommit b74ecf81b541ff8b0e4375fe110cbac3dfe6e18b[m
+Author: gcbragion@gmail.com <gcbragion@gmail.com>
+Date:   Tue Sep 26 14:26:23 2023 -0300
+
+    Initial Project Files
