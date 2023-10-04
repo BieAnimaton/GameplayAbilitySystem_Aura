@@ -4,11 +4,17 @@
 #include "Character/AuraEnemy.h"
 
 #include "Aura/Aura.h"
-#include "PrimitiveComponentId.h"
+#include <AbilitySystem/AuraAbilitySystemComponent.h>
+#include <AbilitySystem/AuraAttributeSet.h>
 
 AAuraEnemy::AAuraEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block); // altera a collisão para custom e visiblity block
+
+	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent"); // construção do ability system component
+	AbilitySystemComponent->SetIsReplicated(true); // confirma a replicação
+
+	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 }
 
 void AAuraEnemy::HighlightActor()
