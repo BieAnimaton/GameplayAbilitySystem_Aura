@@ -9,6 +9,7 @@ AAuraPlayerState::AAuraPlayerState()
 {
 	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent"); // construção do ability system component
 	AbilitySystemComponent->SetIsReplicated(true); // confirma a replicação
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed); // replicação mista - para multiplayer e playert jogável
 
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 

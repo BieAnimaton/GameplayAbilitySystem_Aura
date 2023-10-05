@@ -13,6 +13,7 @@ AAuraEnemy::AAuraEnemy()
 
 	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent"); // construção do ability system component
 	AbilitySystemComponent->SetIsReplicated(true); // confirma a replicação
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal); // replicação mínima - para multiplayer e IA
 
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 }
