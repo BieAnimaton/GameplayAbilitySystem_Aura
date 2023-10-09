@@ -89,8 +89,9 @@ void AAuraPlayerController::BeginPlay()
 
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 		               // subsystems are singletons
-	check(Subsystem); // checa se existe ou não - se subsystem for null, vai crashar aqui
-	Subsystem->AddMappingContext(AuraContext, 0); // simples input map context com prioridade 0
+	if (Subsystem) {
+		Subsystem->AddMappingContext(AuraContext, 0); // simples input map context com prioridade 0
+	}
 	
 	bShowMouseCursor = true; // ver o cursor
 	DefaultMouseCursor = EMouseCursor::Default; // tipo do cursor
